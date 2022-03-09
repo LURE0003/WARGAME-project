@@ -2,7 +2,6 @@ import unittest
 import random
 from card import Card
 
-<<<<<<< HEAD
 class TestCard(unittest.TestCase):
     """Tests the shuffle method for ranks"""
     def test_shuffle_ranks(self):
@@ -48,13 +47,3 @@ class TestCard(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-
-=======
-
-class test_card (unittest.TestCase):
-    def test__init__(self):
-        res = Card()
-        exp = Card
-        self.assertIsInstance(exp, res)
->>>>>>> 097da714892b4ed0846a03b348e598542c06dc5f

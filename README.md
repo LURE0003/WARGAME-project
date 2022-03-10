@@ -1,22 +1,32 @@
-# Project Title
+# War Game Project
 
-Simple overview of use/purpose.
+War Game project for the "Methods of Sustainable Programming" course, teached by Mikael Roos.<br />
+Group members are: Einav Zilka, Dzenis Madzovic and Luan Rexhepi.
 
 ## Description
-
-An in-depth paragraph about your project and overview of use.
+War (also known as Battle in the United Kingdom) is a simple card game, typically played by two players using a standard playing card deck — and often played by children. There are many variations, as well as related games such as the German 32-card Tod und Leben ("Life and Death").<br />
+This is an implementation of the War card game, made completely in python. Our implementation of the war game includes two game modes:
+* Short - played for 26 turns, winner is decided by who has more cards in their deck. Scores are based on the number of cards.
+* Long - played until one of the players loses all cards. Scores are based on the number of draws it took to finish the game.
 
 ## Getting Started
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* Firstly, create a virtual enviroument by running "make venv".
+```
+$ make venv
+```
+* Activate the venv by running the commands given in the command line.
+* To install all of the dependencies, run "make install"
+```
+$ make install
+```
 
-### Installing
+### Running The Game
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* Make sure that all of the dependencies are install
+* To run the game, go to the war directory and run main.py
 
 ### Executing program
 
@@ -52,10 +62,10 @@ ex. [@DomPizzie](https://twitter.com/dompizzie)
 
 This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
 
-## Acknowledgments
+## References
 
 Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
+* [war-wiki](https://en.wikipedia.org/wiki/War_(card_game))
 * [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
 * [dbader](https://github.com/dbader/readme-template)
 * [zenorocha](https://gist.github.com/zenorocha/4526327)

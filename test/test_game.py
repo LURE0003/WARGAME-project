@@ -1,11 +1,13 @@
 """Tests functionalities of the game class."""
+
+
 import unittest
 import unittest.mock
 import io
 import random
 import sys
 import os
-from game import Game
+from game.game import Game
 
 
 class test_game(unittest.TestCase):
@@ -17,10 +19,10 @@ class test_game(unittest.TestCase):
         def __enter__(self):
             """Doesn't allow print statements."""
             self._original_stdout = sys.stdout
-            sys.stdout = open(os.devnull, 'w')
+            sys.stdout = open(os.devnull, "w")
 
         def __exit__(self, exc_type, exc_val, exc_tb):
-            """Allows print after exiting."""
+            """Allows to print after exiting."""
             sys.stdout.close()
             sys.stdout = self._original_stdout
 
@@ -44,7 +46,7 @@ class test_game(unittest.TestCase):
             exp = (None, 0, 2)
             self.assertEqual(res, exp)
 
-    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
+    @unittest.mock.patch("sys.stdout", new_callable=io.StringIO)
     def assert_stdout(self, n, expected_output, mock_stdout):
         """Catches the "print" output."""
         Game().print_screen(n, 1, 1)
@@ -53,7 +55,7 @@ class test_game(unittest.TestCase):
     def test_print_true(self):
         """Tests if the print function delivers the correct output when\
             the player wins."""
-        exp = "You win.\n" + "You have 1 cards and the computer has 1\n"
+        exp = "Great! You win!!!\n" + "You have 1 cards and the computer has 1\n"
         self.assert_stdout(True, exp)
 
     def test_print_false(self):
@@ -68,18 +70,18 @@ class test_game(unittest.TestCase):
         with self.HiddenPrints():
             res = Game().war(5, 5)
             exp = (None, 9, 1)
-            self.assertAlmostEquals(res, exp)
+            self.assertAlmostEqual(res, exp)
 
     def test_input_yes(self):
         """Tests if the function will accept yes for an answer."""
-        with unittest.mock.patch('builtins.input', return_value="yes"):
+        with unittest.mock.patch("builtins.input", return_value="yes"):
             res = Game().ask_input()
             exp = True
             self.assertEqual(res, exp)
 
     def test_input_no(self):
         """Tests if the function will accept no for an answer."""
-        with unittest.mock.patch('builtins.input', return_value="no"):
+        with unittest.mock.patch("builtins.input", return_value="no"):
             res = Game().ask_input()
             exp = False
             self.assertEqual(res, exp)

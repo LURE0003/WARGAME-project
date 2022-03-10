@@ -1,200 +1,62 @@
-Python development project template
-==========================
+# Project Title
 
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+Simple overview of use/purpose.
 
-A template for a Python development project.
+## Description
 
-[[_TOC_]]
+An in-depth paragraph about your project and overview of use.
 
+## Getting Started
 
+### Dependencies
 
-Get going
---------------------------
+* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
+* ex. Windows 10
 
-This is how you can work with the development environment.
+### Installing
 
+* How/where to download your program
+* Any modifications needed to be made to files/folders
 
+### Executing program
 
-### Check version of Python
-
-Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
-
+* How to run the program
+* Step-by-step bullets
 ```
-# Check you Python installation
-make version
-```
-
-If you have another naming of the Python executable then you can solve that using an environment variable. This is common on Mac and Linux.
-
-```
-# Set the environment variable to be your python executable
-export PYTHON=python3
-make version
+code blocks for commands
 ```
 
-Read more on [GNU make](https://www.gnu.org/software/make/manual/make.html).
+## Help
 
-
-
-### Python virtual environment
-
-Install a Python virtual environment and activate it.
-
+Any advise for common problems or issues.
 ```
-# Create the virtual environment
-make venv
-
-# Activate on Windows
-. .venv/Scripts/activate
-
-# Activate on Linx/Mac
-. .venv/bin/activate
+command to run if program contains helper info
 ```
 
-When you are done you can leave the venv using the command `deactivate`.
+## Authors
 
-Read more on [Python venv](https://docs.python.org/3/library/venv.html).
+Contributors names and contact info
 
+ex. Dominique Pizzie  
+ex. [@DomPizzie](https://twitter.com/dompizzie)
 
+## Version History
 
-### Install the dependencies
+* 0.2
+    * Various bug fixes and optimizations
+    * See [commit change]() or See [release history]()
+* 0.1
+    * Initial Release
 
-Install the PIP packages that are dependencies to the project and/or the development environment. The dependencies are documented in the `requirements.txt`.
+## License
 
-Do not forget to check that you have an active venv.
+This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
 
-```
-# Do install them
-make install
+## Acknowledgments
 
-# Check what is installed
-make installed
-```
-
-Read more on [Python PIP](https://pypi.org/project/pip/).
-
-
-
-### Run the code
-
-The example program can be started like this.
-
-```
-# Execute the main program
-python guess/main.py
-```
-
-All code is stored below the directory `guess/`.
-
-
-
-### Run the validators
-
-You can run the static code validators like this. They check the sourcecode and exclude the testcode.
-
-```
-# Run each at a time
-make flake8
-make pylint
-
-# Run all on the same time
-make lint
-```
-
-You might need to update the Makefile if you change the name of the source directory currently named `guess/`.
-
-Read more on:
-
-* [flake8](https://flake8.pycqa.org/en/latest/)
-* [pylint](https://pylint.org/)
-
-
-
-### Run the unittests
-
-You can run the unittests like this. The testfiles are stored in the `test/` directory.
-
-```
-# Run unttests without coverage
-make unittest
-
-# Run unittests with coverage
-make coverage
-
-# Run the linters and the unittests with coverage
-make test
-```
-
-You can open a web browser to inspect the code coverage as a generated HTML report.
-
-```
-firefox htmlcov/index.html
-```
-
-Read more on:
-
-* [unittest](https://docs.python.org/3/library/unittest.html)
-* [coverage](https://coverage.readthedocs.io/)
-
-
-
-### Run parts of the testsuite
-
-You can also run parts of the testsuite, for examples files or methods in files.
-
-You can run all tests from a testfile.
-
-```
-# Run a testfile
-python -m unittest test.test_game
-```
-
-You can also run a single testcase from a file.
-
-```
-# Run a test method, in a class, in a testfile
-python -m unittest test.test_game.TestGameClass.test_init_default_object
-```
-
-
-
-### Remove generated files
-
-You can remove all generated files by this.
-
-```
-# Remove files generated for tests or caching
-make clean
-
-# Do also remove all you have installed
-make clean-all
-```
-
-
-
-Optional targets
---------------------------
-
-These targets might be helpful when running your project.
-
-
-
-### Codestyle with black
-
-You can unify the codestyle using black. Running black will change your source code to have a codestyle according to black codestyle.
-
-```
-# Same same, different names
-make black
-make codestyle
-```
-
-Read more on [black](https://pypi.org/project/black/).
-
-
-
-More targets
---------------------------
-
-The Makefile contains more targets, they are however not yet tested on this directory structure.
+Inspiration, code snippets, etc.
+* [awesome-readme](https://github.com/matiassingers/awesome-readme)
+* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+* [dbader](https://github.com/dbader/readme-template)
+* [zenorocha](https://gist.github.com/zenorocha/4526327)
+* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)

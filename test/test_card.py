@@ -3,7 +3,7 @@
 
 import unittest
 import random
-from game import card
+from war import card
 
 
 class TestCard(unittest.TestCase):
@@ -24,8 +24,9 @@ class TestCard(unittest.TestCase):
         self.assertCountEqual(result, expected_result)
 
     def test_value(self):
-        """Tests if the card value from value method matches the expected result and it is an integer."""
-        test_card = card.Card()
+        """Tests if the card value from value method matches\
+            the expected result and it is an integer."""
+        card.Card()
         result = card.Card().value("Two of Hearts")
         expected_result = 2
         self.assertEqual(result, expected_result)
@@ -37,13 +38,15 @@ class TestCard(unittest.TestCase):
         self.assertIsInstance(test_card, card.Card)
 
     def test_value_error(self):
-        """Tests the value method if it throws an error if the input is not string."""
-        test_card = card.Card()
+        """Tests the value method if it throws an error\
+            if the input is not string."""
+        card.Card()
         self.assertRaises(AttributeError, card.Card().value, 1)
 
     def test_random_card(self):
-        """Makes sure that the returned result comes from ranks and suits lists in the right order."""
-        test_card = card.Card()
+        """Makes sure that the returned result comes from\
+            ranks and suits lists in the right order."""
+        card.Card()
         result = card.Card().random_card()
         self.assertIsInstance(result, str)
         result_rank = result.split(" of ")[0]

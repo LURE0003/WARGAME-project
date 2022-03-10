@@ -2,7 +2,7 @@
 
 
 import unittest
-from game import highscores
+from war import highscores
 
 
 class Test_highscores(unittest.TestCase):
@@ -15,7 +15,8 @@ class Test_highscores(unittest.TestCase):
         self.assertIsInstance(res, exp)
 
     def test_player_in_file_long(self):
-        """Tests that my_player is inserted into the long game highscores file."""
+        """Tests that my_player is inserted into\
+            the long game highscores file."""
         hs_cls = highscores.highscores()
         hs_cls.long_scores("Jeff", "52", "122")
         with open("highscores_long.txt", "r") as txt_file:
@@ -28,7 +29,8 @@ class Test_highscores(unittest.TestCase):
         self.assertTrue(my_player)
 
     def test_player_in_file_short(self):
-        """Tests that my_player is inserted into the short game highscores file."""
+        """Tests that my_player is inserted into\
+            the short game highscores file."""
         hs_cls = highscores.highscores()
         hs_cls.short_scores("Jeff", "52", "122")
         with open("highscores_short.txt", "r") as txt_file:
@@ -41,7 +43,8 @@ class Test_highscores(unittest.TestCase):
         self.assertTrue(my_player)
 
     def test_shorten_list(self):
-        """Tests that the length of the file equals or not more than 20 lines."""
+        """Tests that the length of the file equals\
+            or not more than 20 lines."""
         hs_cls = highscores.highscores()
         hs_cls.shorten_list("highscores_long.txt")
         with open("highscores_long.txt", "r") as long_file:

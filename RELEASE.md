@@ -1,28 +1,62 @@
-Release history
-========================
+# Project Title
 
-Decide on a way how to handled your relaeases and version numbers. Document it here.
+Simple overview of use/purpose.
 
-For example like this...
+## Description
 
+An in-depth paragraph about your project and overview of use.
 
+## Getting Started
 
-v2.0.0 (2022-02-05)
-------------------------
+### Dependencies
 
-* Moved to a new location.
+* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
+* ex. Windows 10
 
+### Installing
 
+* How/where to download your program
+* Any modifications needed to be made to files/folders
 
-v1.1.0 (2021-02-12)
-------------------------
+### Executing program
 
-* Enabling generating documentation from comments using pdoc and pydoc.
-* Enabling UML documentation using pyreverse.
+* How to run the program
+* Step-by-step bullets
+```
+code blocks for commands
+```
 
+## Help
 
+Any advise for common problems or issues.
+```
+command to run if program contains helper info
+```
 
-v1.0.0 (2021-02-12)
-------------------------
+## Authors
 
-* First release, extracted from course material and further developed.
+Contributors names and contact info
+
+ex. Dominique Pizzie  
+ex. [@DomPizzie](https://twitter.com/dompizzie)
+
+## Version History
+
+* 0.2
+    * Various bug fixes and optimizations
+    * See [commit change]() or See [release history]()
+* 0.1
+    * Initial Release
+
+## License
+
+This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+
+## Acknowledgments
+
+Inspiration, code snippets, etc.
+* [awesome-readme](https://github.com/matiassingers/awesome-readme)
+* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+* [dbader](https://github.com/dbader/readme-template)
+* [zenorocha](https://gist.github.com/zenorocha/4526327)
+* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)

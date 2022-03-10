@@ -23,7 +23,8 @@ class highscores:
         with open(high_file, "r") as txt_file:
             scores = txt_file.readlines()
             scores = sorted(
-                scores, key=lambda i: int(i.split(" ")[type_sort]), reverse=backwards
+                scores, key=lambda i: int(i.split(" ")[type_sort]),
+                reverse=backwards
             )
         with open(high_file, "w") as w:
             w.writelines(scores)

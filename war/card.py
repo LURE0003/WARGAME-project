@@ -41,11 +41,13 @@ class Card:
     }
 
     def random_card(self):
-        """Draws a random card from list ranks and suits and returns the value as a string."""
+        """Draws a random card from list ranks and suits and\
+            returns the value as a string."""
         random.shuffle(self.ranks)
         random.shuffle(self.suits)
         return self.ranks[0] + " of " + self.suits[0]
 
     def value(self, value):
-        """Returns the value of cards from the string created on random_card function."""
+        """Returns the value of cards from the string created\
+            on random_card function."""
         return self.values.get(value.split(" of ")[0])

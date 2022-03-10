@@ -7,7 +7,7 @@ import io
 import random
 import sys
 import os
-from game import game
+from war import game
 
 
 class test_game(unittest.TestCase):
@@ -76,6 +76,13 @@ class test_game(unittest.TestCase):
             exp = True
             self.assertEqual(res, exp)
 
+    def test_input_cheat(self):
+        """Tests if the player can cheat"""
+        with unittest.mock.patch("builtins.input", return_value="cheat"):
+            res = game.Game().ask_input()
+            exp = True
+        self.assertEqual(res, exp)
+
     def test_input_yes(self):
         """Tests if the function will accept yes for an answer."""
         with unittest.mock.patch("builtins.input", return_value="yes"):
@@ -101,6 +108,32 @@ class test_game(unittest.TestCase):
                 else:
                     exp = False
             self.assertEqual(res, exp)
+
+    def test_short(self):
+        """Tests if short will end when answer is no"""
+        with self.HiddenPrints():
+            with unittest.mock.patch("builtins.input", return_value="no"):
+                game.Game().play_short("Tester")
+                exp = True
+                with open("highscores_short.txt", "r") as r:
+                    if "26" in " ".join(r.readlines()):
+                        res = True
+                    else:
+                        res = False
+                self.assertEqual(res, exp)
+
+    def test_long(self):
+        """Tests if long will end when answer is no"""
+        with self.HiddenPrints():
+            with unittest.mock.patch("builtins.input", return_value="no"):
+                game.Game().play_long("Tester")
+                exp = True
+                with open("highscores_long.txt", "r") as r:
+                    if "26" in " ".join(r.readlines()):
+                        res = True
+                    else:
+                        res = False
+                self.assertEqual(res, exp)
 
     def test_cheat_long(self):
         """Tests if playing the long version is possible."""

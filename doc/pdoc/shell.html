@@ -29,7 +29,7 @@
 </summary>
 <pre><code class="python">&#34;&#34;&#34;Shell class for the game.&#34;&#34;&#34;
 import cmd
-import game
+from war import game
 
 
 class Shell(cmd.Cmd):
@@ -44,8 +44,10 @@ class Shell(cmd.Cmd):
     def do_start(self, _):
         &#34;&#34;&#34;Start the game in &#34;short&#34; mode with &#34;cheat&#34; off.&#34;&#34;&#34;
         print(&#34;&#34;&#34;
-You and me will play war game. When you want to draw a card, press enter.
-Whoever has a higher card win both cards.\n&#34;&#34;&#34;)
+You and me will play war game.
+When you want to draw a card, press enter.
+Whoever has a higher card win both cards.
+If we have the same card value, a war will start!\n&#34;&#34;&#34;)
         the_game = game.Game()
         the_game.play_short(self.name)
         print(&#34;&#34;&#34;\nType &#39;start&#39; to start a new game or &#39;exit&#39; to quit.&#34;&#34;&#34;)
@@ -119,8 +121,10 @@ Whoever has a higher card win both cards.\n&#34;&#34;&#34;)
     def do_start(self, _):
         &#34;&#34;&#34;Start the game in &#34;short&#34; mode with &#34;cheat&#34; off.&#34;&#34;&#34;
         print(&#34;&#34;&#34;
-You and me will play war game. When you want to draw a card, press enter.
-Whoever has a higher card win both cards.\n&#34;&#34;&#34;)
+You and me will play war game.
+When you want to draw a card, press enter.
+Whoever has a higher card win both cards.
+If we have the same card value, a war will start!\n&#34;&#34;&#34;)
         the_game = game.Game()
         the_game.play_short(self.name)
         print(&#34;&#34;&#34;\nType &#39;start&#39; to start a new game or &#39;exit&#39; to quit.&#34;&#34;&#34;)
@@ -275,8 +279,10 @@ Whoever has a higher card win both cards.\n&#34;&#34;&#34;)
 <pre><code class="python">    def do_start(self, _):
         &#34;&#34;&#34;Start the game in &#34;short&#34; mode with &#34;cheat&#34; off.&#34;&#34;&#34;
         print(&#34;&#34;&#34;
-You and me will play war game. When you want to draw a card, press enter.
-Whoever has a higher card win both cards.\n&#34;&#34;&#34;)
+You and me will play war game.
+When you want to draw a card, press enter.
+Whoever has a higher card win both cards.
+If we have the same card value, a war will start!\n&#34;&#34;&#34;)
         the_game = game.Game()
         the_game.play_short(self.name)
         print(&#34;&#34;&#34;\nType &#39;start&#39; to start a new game or &#39;exit&#39; to quit.&#34;&#34;&#34;)</code></pre>

@@ -2,8 +2,10 @@
 WAR GAME
 
 """
-
-from war import shell
+try:
+    import shell
+except ImportError:
+    from war import shell
 
 if __name__ == "__main__":
     print(__doc__)

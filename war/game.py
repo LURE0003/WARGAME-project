@@ -1,6 +1,11 @@
 """The logic behind the War card game."""
-from war import card
-from war import highscores
+
+try:
+    import card
+    import highscores
+except ImportError:
+    from war import card
+    from war import highscores
 
 
 class Game:
@@ -75,9 +80,9 @@ class Game:
         highscores.highscores().long_scores(player, hum_cards, counter)
 
     def ask_input(self) -> None:
+        """Gets the input from unit (to continue drawing cards)."""
         if self.cheat:
             return True
-        """Gets the input from unit (to continue drawing cards)."""
         arg = input("Would you like to continue ('enter' or 'yes')? ")
         if arg.upper() == "CHEAT":
             self.cheat = True

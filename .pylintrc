@@ -14,7 +14,7 @@
 #reports=no
 
 [MASTER]
-#ignore=*_test.py
-#ignore-patterns=*_test.py
+#ignore=test_*.py
+#ignore-patterns=test_*.py
 
 init-hook='import sys; sys.path.append(".")'

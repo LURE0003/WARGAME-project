@@ -1,6 +1,11 @@
 """Shell class for the game."""
+
+
 import cmd
-from war import game
+try:
+    import game
+except ImportError:
+    from war import game
 
 
 class Shell(cmd.Cmd):

@@ -7,7 +7,7 @@ import io
 import random
 import sys
 import os
-from game.game import Game
+from game import game
 
 
 class test_game(unittest.TestCase):
@@ -28,34 +28,34 @@ class test_game(unittest.TestCase):
 
     def test_init(self):
         """Tests if the class exists."""
-        res = Game()
-        exp = Game
+        res = game.Game()
+        exp = game.Game
         self.assertIsInstance(res, exp)
 
     def test_wins(self):
         """Tests if the correct output will occur when the player wins."""
         with self.HiddenPrints():
-            res = Game().who_wins(1, 1, 0, 2)
+            res = game.Game().who_wins(1, 1, 0, 2)
             exp = (None, 2, 0)
             self.assertEqual(res, exp)
 
     def test_loss(self):
         """Tests if the correct output will occur when the player loses."""
         with self.HiddenPrints():
-            res = Game().who_wins(1, 1, 2, 0)
+            res = game.Game().who_wins(1, 1, 2, 0)
             exp = (None, 0, 2)
             self.assertEqual(res, exp)
 
     @unittest.mock.patch("sys.stdout", new_callable=io.StringIO)
     def assert_stdout(self, n, expected_output, mock_stdout):
         """Catches the "print" output."""
-        Game().print_screen(n, 1, 1)
+        game.Game().print_screen(n, 1, 1)
         self.assertEqual(mock_stdout.getvalue(), expected_output)
 
     def test_print_true(self):
         """Tests if the print function delivers the correct output when\
             the player wins."""
-        exp = "Great! You win!!!\n" + "You have 1 cards and the computer has 1\n"
+        exp = "Great! You win!!!\nYou have 1 cards and the computer has 1\n"
         self.assert_stdout(True, exp)
 
     def test_print_false(self):
@@ -68,28 +68,32 @@ class test_game(unittest.TestCase):
         """Tests if a war occurs correctly."""
         random.seed(0)
         with self.HiddenPrints():
-            res = Game().war(5, 5)
-            exp = (None, 9, 1)
-            self.assertAlmostEqual(res, exp)
+            test_game = game.Game().war(5, 5)
+            if test_game == (None, 9, 1) or test_game == (None, 1, 9):
+                res = True
+            else:
+                res = False
+            exp = True
+            self.assertEqual(res, exp)
 
     def test_input_yes(self):
         """Tests if the function will accept yes for an answer."""
         with unittest.mock.patch("builtins.input", return_value="yes"):
-            res = Game().ask_input()
+            res = game.Game().ask_input()
             exp = True
             self.assertEqual(res, exp)
 
     def test_input_no(self):
         """Tests if the function will accept no for an answer."""
         with unittest.mock.patch("builtins.input", return_value="no"):
-            res = Game().ask_input()
+            res = game.Game().ask_input()
             exp = False
             self.assertEqual(res, exp)
 
     def test_cheat_short(self):
         """Tests if playing the short version is possible."""
         with self.HiddenPrints():
-            Game().play_short("Tester", cheat=True)
+            game.Game().play_short("Tester", cheat=True)
             res = True
             with open("highscores_short.txt", "r") as r:
                 if "Tester" in " ".join(r.readlines()):
@@ -101,7 +105,7 @@ class test_game(unittest.TestCase):
     def test_cheat_long(self):
         """Tests if playing the long version is possible."""
         with self.HiddenPrints():
-            Game().play_long("Tester", cheat=True)
+            game.Game().play_long("Tester", cheat=True)
             res = True
             with open("highscores_long.txt", "r") as r:
                 if "Tester" in " ".join(r.readlines()):

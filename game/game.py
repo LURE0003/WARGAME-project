@@ -1,10 +1,11 @@
 """The logic behind the War card game."""
-import card
-import highscores
+from game import card
+from game import highscores
 
 
 class Game:
     """Placeholder for docstring."""
+    cheat = False
 
     def play_short(self, player, cheat=False) -> None:
         """Plays the game for only 26 turns, shorter version."""
@@ -34,7 +35,8 @@ class Game:
         else:
             print("\nIt's a tie. No one wins.")
         print(f"\nFinal score:\nYou: {hum_cards} | Computer: {com_cards}")
-        highscores.highscores().short_scores(player, hum_cards, hum_cards > com_cards)
+        highscores.highscores().short_scores(
+            player, hum_cards, hum_cards > com_cards)
 
     def play_long(self, player, cheat=False) -> None:
         """Plays the game until the entire deck runs out, long version."""
@@ -73,8 +75,13 @@ class Game:
         highscores.highscores().long_scores(player, hum_cards, counter)
 
     def ask_input(self) -> None:
+        if self.cheat:
+            return True
         """Gets the input from unit (to continue drawing cards)."""
         arg = input("Would you like to continue ('enter' or 'yes')? ")
+        if arg.upper() == "CHEAT":
+            self.cheat = True
+            return True
         return arg.upper() in ["Y", "YES", "TRUE", "1", ""]
 
     def print_screen(self, arg, human_cards, computer_cards) -> None:

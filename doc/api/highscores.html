@@ -52,7 +52,8 @@ class highscores:
         with open(high_file, &#34;r&#34;) as txt_file:
             scores = txt_file.readlines()
             scores = sorted(
-                scores, key=lambda i: int(i.split(&#34; &#34;)[type_sort]), reverse=backwards
+                scores, key=lambda i: int(i.split(&#34; &#34;)[type_sort]),
+                reverse=backwards
             )
         with open(high_file, &#34;w&#34;) as w:
             w.writelines(scores)
@@ -107,7 +108,8 @@ class highscores:
         with open(high_file, &#34;r&#34;) as txt_file:
             scores = txt_file.readlines()
             scores = sorted(
-                scores, key=lambda i: int(i.split(&#34; &#34;)[type_sort]), reverse=backwards
+                scores, key=lambda i: int(i.split(&#34; &#34;)[type_sort]),
+                reverse=backwards
             )
         with open(high_file, &#34;w&#34;) as w:
             w.writelines(scores)
@@ -190,7 +192,8 @@ class highscores:
     with open(high_file, &#34;r&#34;) as txt_file:
         scores = txt_file.readlines()
         scores = sorted(
-            scores, key=lambda i: int(i.split(&#34; &#34;)[type_sort]), reverse=backwards
+            scores, key=lambda i: int(i.split(&#34; &#34;)[type_sort]),
+            reverse=backwards
         )
     with open(high_file, &#34;w&#34;) as w:
         w.writelines(scores)</code></pre>

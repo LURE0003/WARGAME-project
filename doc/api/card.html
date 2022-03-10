@@ -70,13 +70,15 @@ class Card:
     }
 
     def random_card(self):
-        &#34;&#34;&#34;Draws a random card from list ranks and suits and returns the value as a string.&#34;&#34;&#34;
+        &#34;&#34;&#34;Draws a random card from list ranks and suits and\
+            returns the value as a string.&#34;&#34;&#34;
         random.shuffle(self.ranks)
         random.shuffle(self.suits)
         return self.ranks[0] + &#34; of &#34; + self.suits[0]
 
     def value(self, value):
-        &#34;&#34;&#34;Returns the value of cards from the string created on random_card function.&#34;&#34;&#34;
+        &#34;&#34;&#34;Returns the value of cards from the string created\
+            on random_card function.&#34;&#34;&#34;
         return self.values.get(value.split(&#34; of &#34;)[0])</code></pre>
 </details>
 </section>
@@ -136,13 +138,15 @@ class Card:
     }
 
     def random_card(self):
-        &#34;&#34;&#34;Draws a random card from list ranks and suits and returns the value as a string.&#34;&#34;&#34;
+        &#34;&#34;&#34;Draws a random card from list ranks and suits and\
+            returns the value as a string.&#34;&#34;&#34;
         random.shuffle(self.ranks)
         random.shuffle(self.suits)
         return self.ranks[0] + &#34; of &#34; + self.suits[0]
 
     def value(self, value):
-        &#34;&#34;&#34;Returns the value of cards from the string created on random_card function.&#34;&#34;&#34;
+        &#34;&#34;&#34;Returns the value of cards from the string created\
+            on random_card function.&#34;&#34;&#34;
         return self.values.get(value.split(&#34; of &#34;)[0])</code></pre>
 </details>
 <h3>Class variables</h3>
@@ -166,13 +170,15 @@ class Card:
 <span>def <span class="ident">random_card</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Draws a random card from list ranks and suits and returns the value as a string.</p></div>
+<div class="desc"><p>Draws a random card from list ranks and suits and
+returns the value as a string.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def random_card(self):
-    &#34;&#34;&#34;Draws a random card from list ranks and suits and returns the value as a string.&#34;&#34;&#34;
+    &#34;&#34;&#34;Draws a random card from list ranks and suits and\
+        returns the value as a string.&#34;&#34;&#34;
     random.shuffle(self.ranks)
     random.shuffle(self.suits)
     return self.ranks[0] + &#34; of &#34; + self.suits[0]</code></pre>
@@ -182,13 +188,15 @@ class Card:
 <span>def <span class="ident">value</span></span>(<span>self, value)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Returns the value of cards from the string created on random_card function.</p></div>
+<div class="desc"><p>Returns the value of cards from the string created
+on random_card function.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def value(self, value):
-    &#34;&#34;&#34;Returns the value of cards from the string created on random_card function.&#34;&#34;&#34;
+    &#34;&#34;&#34;Returns the value of cards from the string created\
+        on random_card function.&#34;&#34;&#34;
     return self.values.get(value.split(&#34; of &#34;)[0])</code></pre>
 </details>
 </dd>

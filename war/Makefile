@@ -49,7 +49,7 @@ clean:
 	rm -rf htmlcov
 
 clean-doc: clean
-	@$(call MESSAGE,$@)
+	@$(call MESSA	E,$@)
 	rm -rf doc
 
 clean-all: clean clean-doc
@@ -62,7 +62,7 @@ clean-all: clean clean-doc
 #
 pylint:
 	@$(call MESSAGE,$@)
-	-cd game && $(PYTHON) -m pylint *.py
+	-cd war && $(PYTHON) -m pylint *.py
 
 flake8:
 	@$(call MESSAGE,$@)
@@ -76,7 +76,7 @@ lint: flake8 pylint
 #
 black:
 	@$(call MESSAGE,$@)
-	 $(PYTHON) -m black game/ test/
+	 $(PYTHON) -m black war/ test/
 
 codestyle: black
 
@@ -103,20 +103,20 @@ test: lint coverage
 .PHONY: pydoc
 pydoc:
 	@$(call MESSAGE,$@)
-	install -d doc/pydoc
-	$(PYTHON) -m pydoc -w guess/*.py
+	install -d doc/api
+	$(PYTHON) -m pydoc -w war/*.py
 	mv *.html doc/pydoc
 
 pdoc:
 	@$(call MESSAGE,$@)
-	pdoc --force --html --output-dir doc/pdoc guess/*.py
+	pdoc --force --html --output-dir doc/api war/*.py
 
 pyreverse:
 	@$(call MESSAGE,$@)
-	install -d doc/pyreverse
-	pyreverse game/*.py
-	dot -Tpng classes.dot -o doc/pyreverse/classes.png
-	dot -Tpng packages.dot -o doc/pyreverse/packages.png
+	install -d doc/uml
+	pyreverse war/*.py
+	dot -Tpng classes.dot -o doc/uml/classes.png
+	dot -Tpng packages.dot -o doc/uml/packages.png
 	rm -f classes.dot packages.dot
 
 doc: pdoc pyreverse #pydoc sphinx

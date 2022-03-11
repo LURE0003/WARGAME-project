@@ -1,7 +1,5 @@
-"""
-WAR GAME
+"""WAR GAME."""
 
-"""
 try:
     import shell
 except ImportError:

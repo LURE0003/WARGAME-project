@@ -13,7 +13,7 @@ class Shell(cmd.Cmd):
 
     def __init__(self, name):
         """Class constructor, prints out commands."""
-        super(Shell, self).__init__()
+        super().__init__()
         print("""Type 'start', 'long', 'changename', 'exit' or 'help'""")
         self.name = name
 

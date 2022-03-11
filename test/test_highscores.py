@@ -5,19 +5,19 @@ import unittest
 from war import highscores
 
 
-class Test_highscores(unittest.TestCase):
+class TestHighscores(unittest.TestCase):
     """Unit tests for Highscore class."""
 
     def test_init(self):
         """Tests if class object is created."""
-        res = highscores.highscores()
-        exp = highscores.highscores
+        res = highscores.Highscores()
+        exp = highscores.Highscores
         self.assertIsInstance(res, exp)
 
     def test_player_in_file_long(self):
         """Tests that my_player is inserted into\
             the long game highscores file."""
-        hs_cls = highscores.highscores()
+        hs_cls = highscores.Highscores()
         hs_cls.long_scores("Jeff", "52", "122")
         with open("highscores_long.txt", "r") as txt_file:
             scores = txt_file.readlines()
@@ -31,7 +31,7 @@ class Test_highscores(unittest.TestCase):
     def test_player_in_file_short(self):
         """Tests that my_player is inserted into\
             the short game highscores file."""
-        hs_cls = highscores.highscores()
+        hs_cls = highscores.Highscores()
         hs_cls.short_scores("Jeff", "52", "122")
         with open("highscores_short.txt", "r") as txt_file:
             scores = txt_file.readlines()
@@ -45,7 +45,7 @@ class Test_highscores(unittest.TestCase):
     def test_shorten_list(self):
         """Tests that the length of the file equals\
             or not more than 20 lines."""
-        hs_cls = highscores.highscores()
+        hs_cls = highscores.Highscores()
         hs_cls.shorten_list("highscores_long.txt")
         with open("highscores_long.txt", "r") as long_file:
             long_scores = long_file.readlines()
@@ -71,7 +71,7 @@ class Test_highscores(unittest.TestCase):
             file_to_clear.truncate(0)
 
         """Insert new records to file"""
-        hs_cls = highscores.highscores()
+        hs_cls = highscores.Highscores()
         hs_cls.short_scores("Jeff", "45", "25")
         hs_cls.short_scores("Ish", "0", "26")
 
@@ -94,7 +94,7 @@ class Test_highscores(unittest.TestCase):
             file_to_clear.truncate(0)
 
         """Insert new records to file"""
-        hs_cls = highscores.highscores()
+        hs_cls = highscores.Highscores()
         hs_cls.long_scores("Jeff", "0", "11")
         hs_cls.long_scores("Ish", "1", "200")
 

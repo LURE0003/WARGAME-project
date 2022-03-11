@@ -30,43 +30,79 @@ $ make install
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
+* After the game is ecexuted from the war directory through main.py module, user is going to be promped to chose a player name.
+* A new feature will appear in the screen asking the player to chose between four options, such as:
+* Start - the short version of the game will be initiated (26 turns).
+* Long - the long version of the game will be initiated (the game continues until one of the players loses all cards).
+* Changename - option to allow user to change tha player name.
+* Exit - exit the game.
+* Help - additional help.
+* Following the option choosen by the player (short or long) the game will be played by pressing enter key and the random cards are going to be drawn for the user and the computer. If it's a tie (same cards) a war option of the game will be initiated (war is not a feature in the short version).
+* 
+
+## Unit testing
+
+* Activate the virtual environement 
+* For Windows:
 ```
-code blocks for commands
+$ . .venv/Scripts/activate
 ```
+* For Mac:
+```
+$ . .venv/bin/activate
+```
+* After the virtual environmental is activated then run the following command:
+```
+$ make test
+```
+* Make test will run all test files and make coverage test. Coverage results will be generated to a html report.
+
+
+## Generating documentation
+
+* Activate the virtual environement 
+* For Windows:
+```
+$ . .venv/Scripts/activate
+```
+* For Mac:
+```
+$ . .venv/bin/activate
+```
+* After the virtual environmental is activated than run the following command:
+```
+$ make doc
+```
+* The "make doc" command will generate documentation and uml diagram. All the documentation files will be stored under new folder named "doc".
+```
+$ cd doc/
+```
+* Under uml/ directory you can find the uml diagram.
+* Umder api/ directory you can find the comments and code documentation.
 
 ## Help
 
-Any advise for common problems or issues.
+For help during the game, type following command line for additional information:
 ```
-command to run if program contains helper info
+$ help
 ```
 
 ## Authors
+* Einav Zilka
+* Dzenis Madzovic
+* Luan Rexhepi
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
 
 ## Version History
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the LICENSE.md file for details
 
 ## References
 
-Inspiration, code snippets, etc.
+* [Github Repo](https://github.com/PsychicPlatypus/WARGAME-project)
 * [war-wiki](https://en.wikipedia.org/wiki/War_(card_game))
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+
+
